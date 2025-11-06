@@ -6,7 +6,7 @@
   <title>Usipa Koperasi</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
   <style>
-    *{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial,sans-serif;background:#f5f5f5}.header{background:#007bff;color:#fff;padding:16px;text-align:center}.tab-bar{display:flex;background:#eee}.tab-btn{flex:1;padding:12px;background:none;border:none;cursor:pointer}.tab-btn:hover{background:#ddd}.tab-btn.active{background:#fff;font-weight:bold;border-bottom:3px solid #007bff}.container{max-width:1200px;margin:0 auto;padding:20px}.page{display:none}.page.active{display:block}.card{background:#fff;padding:20px;border-radius:8px;margin-bottom:20px;box-shadow:0 2px 8px rgba(0,0,0,.1)}.section-title{font-size:18px;font-weight:bold;margin:20px 0 12px;display:flex;justify-content:space-between;align-items:center}.form-group{margin-bottom:12px}.form-group label{display:block;margin-bottom:4px;font-weight:500}.form-group input,.form-group select{width:100%;padding:10px;border:1px solid #ccc;border-radius:4px}.btn{padding:10px 20px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;margin-right:8px}.btn:hover{background:#0056b3}.btn-success{background:#28a745}.btn-success:hover{background:#218838}.btn-danger{background:#dc3545}.btn-danger:hover{background:#c82333}.btn-info{background:#17a2b8}.btn-info:hover{background:#138496}.btn-warning{background:#ffc107;color:#212529}.btn-warning:hover{background:#e0a800}.btn-sm{padding:6px 12px;font-size:12px}.btn-refresh{background:#17a2b8;padding:8px 16px;font-size:14px}.btn-refresh:hover{background:#138496}.loan-item{padding:10px;border:1px solid #ddd;border-radius:4px;margin:8px 0;cursor:pointer}.loan-item:hover{background:#f0f0f0}.loan-item.selected{background:#e3f2fd;border-color:#007bff;border-width:2px}.status-badge{display:inline-block;padding:4px 8px;border-radius:12px;font-size:12px;font-weight:bold}.status-lunas{background:#d4edda;color:#155724}.status-belum{background:#fff3cd;color:#856404}.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:20px 0}.stat-card{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:20px;border-radius:8px;text-align:center}.stat-card.green{background:linear-gradient(135deg,#11998e 0%,#38ef7d 100%)}.stat-card.blue{background:linear-gradient(135deg,#4facfe 0%,#00f2fe 100%)}.stat-card.orange{background:linear-gradient(135deg,#fa709a 0%,#fee140 100%)}.stat-card.profit{background:linear-gradient(135deg,#f093fb 0%,#f5576c 100%)}.stat-card.cash{background:linear-gradient(135deg,#56ab2f 0%,#a8e6cf 100%)}.stat-value{font-size:28px;font-weight:bold;margin:8px 0}.stat-label{font-size:14px;opacity:.9}.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:1000;align-items:center;justify-content:center}.modal.active{display:flex}.modal-content{background:#fff;padding:24px;border-radius:8px;max-width:400px;width:90%}.modal-header{font-size:18px;font-weight:bold;margin-bottom:12px}.modal-body{margin-bottom:20px;white-space:pre-line}.info-box{background:#e3f2fd;border-left:4px solid #2196f3;padding:12px;margin:12px 0;border-radius:4px}.warning-box{background:#fff3cd;border-left:4px solid #ffc107;padding:12px;margin:12px 0;border-radius:4px}.error-box{background:#f8d7da;border-left:4px solid #dc3545;padding:12px;margin:12px 0;border-radius:4px}table{width:100%;border-collapse:collapse;margin:16px 0}th,td{padding:12px;text-align:left;border-bottom:1px solid #ddd}th{background:#f8f9fa;font-weight:bold}tr:hover{background:#f9f9f9}.id-cell{font-family:monospace;color:#666;font-size:11px}.selected-member{background:#d4edda;padding:8px;border-radius:4px;margin:8px 0;border-left:4px solid #28a745}.small-text{font-size:12px;color:#777}details{margin-bottom:10px}summary{cursor:pointer;font-weight:bold}.edit-input{background:#fffbe6;border:1px solid #ffc107;padding:4px;border-radius:4px}.save-all-btn{margin-top:10px}.import-btn{background:#28a745}.import-btn:hover{background:#218838}
+    *{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial,sans-serif;background:#f5f5f5}.header{background:#007bff;color:#fff;padding:16px;text-align:center}.tab-bar{display:flex;background:#eee}.tab-btn{flex:1;padding:12px;background:none;border:none;cursor:pointer}.tab-btn:hover{background:#ddd}.tab-btn.active{background:#fff;font-weight:bold;border-bottom:3px solid #007bff}.container{max-width:1200px;margin:0 auto;padding:20px}.page{display:none}.page.active{display:block}.card{background:#fff;padding:20px;border-radius:8px;margin-bottom:20px;box-shadow:0 2px 8px rgba(0,0,0,.1)}.section-title{font-size:18px;font-weight:bold;margin:20px 0 12px;display:flex;justify-content:space-between;align-items:center}.form-group{margin-bottom:12px}.form-group label{display:block;margin-bottom:4px;font-weight:500}.form-group input,.form-group select{width:100%;padding:10px;border:1px solid #ccc;border-radius:4px}.btn{padding:10px 20px;background:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer;margin-right:8px}.btn:hover{background:#0056b3}.btn-success{background:#28a745}.btn-success:hover{background:#218838}.btn-danger{background:#dc3545}.btn-danger:hover{background:#c82333}.btn-info{background:#17a2b8}.btn-info:hover{background:#138496}.btn-warning{background:#ffc107;color:#212529}.btn-warning:hover{background:#e0a800}.btn-sm{padding:6px 12px;font-size:12px}.btn-refresh{background:#17a2b8;padding:8px 16px;font-size:14px}.btn-refresh:hover{background:#138496}.loan-item{padding:10px;border:1px solid #ddd;border-radius:4px;margin:8px 0;cursor:pointer}.loan-item:hover{background:#f0f0f0}.loan-item.selected{background:#e3f2fd;border-color:#007bff;border-width:2px}.status-badge{display:inline-block;padding:4px 8px;border-radius:12px;font-size:12px;font-weight:bold}.status-lunas{background:#d4edda;color:#155724}.status-belum{background:#fff3cd;color:#856404}.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:20px 0}.stat-card{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:20px;border-radius:8px;text-align:center}.stat-card.green{background:linear-gradient(135deg,#11998e 0%,#38ef7d 100%)}.stat-card.blue{background:linear-gradient(135deg,#4facfe 0%,#00f2fe 100%)}.stat-card.orange{background:linear-gradient(135deg,#fa709a 0%,#fee140 100%)}.stat-card.profit{background:linear-gradient(135deg,#f093fb 0%,#f5576c 100%)}.stat-card.cash{background:linear-gradient(135deg,#56ab2f 0%,#a8e6cf 100%)}.stat-value{font-size:28px;font-weight:bold;margin:8px 0}.stat-label{font-size:14px;opacity:.9}.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:1000;align-items:center;justify-content:center}.modal.active{display:flex}.modal-content{background:#fff;padding:24px;border-radius:8px;max-width:400px;width:90%}.modal-header{font-size:18px;font-weight:bold;margin-bottom:12px}.modal-body{margin-bottom:20px;white-space:pre-line}.info-box{background:#e3f2fd;border-left:4px solid #2196f3;padding:12px;margin:12px 0;border-radius:4px}.warning-box{background:#fff3cd;border-left:4px solid #ffc107;padding:12px;margin:12px 0;border-radius:4px}.error-box{background:#f8d7da;border-left:4px solid #dc3545;padding:12px;margin:12px 0;border-radius:4px}table{width:100%;border-collapse:collapse;margin:16px 0}th,td{padding:12px;text-align:left;border-bottom:1px solid #ddd}th{background:#f8f9fa;font-weight:bold}tr:hover{background:#f9f9f9}.id-cell{font-family:monospace;color:#666;font-size:11px}.selected-member{background:#d4edda;padding:8px;border-radius:4px;margin:8px 0;border-left:4px solid #28a745}.small-text{font-size:12px;color:#777}details{margin-bottom:10px}summary{cursor:pointer;font-weight:bold}.edit-input{background:#fffbe6;border:1px solid #ffc107;padding:4px;border-radius:4px;width:100%}.save-all-btn{margin-top:10px}.import-btn{background:#28a745}.import-btn:hover{background:#218838}
   </style>
 </head>
 <body>
@@ -45,6 +45,47 @@
       </details>
     </div>
 
+    <!-- PINJAMAN -->
+    <div id="page-pinjaman" class="page">
+      <details open>
+        <summary>Tambah Pinjaman</summary>
+        <div class="card">
+          <div class="form-group"><label>Anggota *</label><select id="loanMember"><option value="">— Pilih —</option></select></div>
+          <div class="form-group"><label>Jumlah (Pokok) *</label><input type="number" id="pokok" oninput="updateSim()"></div>
+          <div class="form-group"><label>Tenor (Bulan) *</label><input type="number" id="tenor" oninput="updateSim()"></div>
+          <div class="form-group"><label><input type="checkbox" id="wajibCicilan"> Wajib Cicilan Bulanan</label></div>
+          <div class="info-box"><strong>Simulasi (Bunga 1%/bln):</strong><div id="simResult" style="margin-top:8px">Isi data untuk simulasi</div></div>
+          <button class="btn" onclick="addLoan()">Tambah Pinjaman</button>
+        </div>
+      </details>
+      <details open>
+        <summary>Daftar Pinjaman</summary>
+        <div class="card"><table><thead><tr><th>Anggota</th><th>Pokok</th><th>Total</th><th>Terbayar</th><th>Sisa</th><th>Status</th><th>Riwayat</th></tr></thead><tbody id="loanList"></tbody></table></div>
+      </details>
+    </div>
+
+    <!-- PEMBAYARAN -->
+    <div id="page-pembayaran" class="page">
+      <details open>
+        <summary>Pembayaran</summary>
+        <div class="card">
+          <div class="form-group"><label>Pilih Anggota *</label><select id="payMember" onchange="loadLoans()"><option value="">— Pilih Anggota —</option></select></div>
+          <div id="selectedMemberInfo" style="display:none"></div>
+          <div id="loanSel" style="display:none">
+            <div class="form-group"><label>Pilih Pinjaman *</label><div id="actLoans"></div></div>
+            <div id="loanDetailInfo" style="display:none"></div>
+            <div class="form-group"><label>Nominal Bayar *</label><input type="number" id="nomBayar" placeholder="Masukkan nominal"></div>
+            <div id="sisaInfo" class="warning-box" style="display:none"></div>
+            <button class="btn btn-success" onclick="makePay()">Proses Bayar</button>
+          </div>
+        </div>
+      </details>
+      <details open>
+        <summary>Riwayat Pembayaran (20 Terakhir)</summary>
+        <div class="card"><table><thead><tr><th>Tanggal</th><th>Anggota</th><th>Nominal</th></tr></thead><tbody id="payList"></tbody></table></div>
+      </details>
+    </div>
+
     <!-- LAPORAN -->
     <div id="page-laporan" class="page">
       <details open>
@@ -55,11 +96,69 @@
           <div class="info-box">File harus punya sheet: Anggota, Pinjaman, Pembayaran, Ringkasan</div>
         </div>
       </details>
-      <!-- ... (modal, dll tetap sama) -->
+      <details open>
+        <summary>Modal Awal</summary>
+        <div class="card">
+          <div class="form-group"><label>Modal Awal (Rp)</label><input type="number" id="modalAwal" placeholder="Masukkan modal awal"></div>
+          <button class="btn" onclick="saveModalAwal()">Simpan Modal Awal</button>
+        </div>
+      </details>
+      <details open>
+        <summary>Tambah Modal</summary>
+        <div class="card">
+          <div class="form-group"><label>Nominal Tambah (Rp)</label><input type="number" id="tambahModal" placeholder="Masukkan nominal tambah"></div>
+          <button class="btn" onclick="addModal()">Tambah Modal</button>
+        </div>
+      </details>
+      <details open>
+        <summary>Ringkasan</summary>
+        <div class="card">
+          <div class="stats-grid">
+            <div class="stat-card blue"><div class="stat-label">Total Pinjaman</div><div class="stat-value" id="totPinjam">Rp 0</div></div>
+            <div class="stat-card green"><div class="stat-label">Terbayar</div><div class="stat-value" id="totPaid">Rp 0</div></div>
+            <div class="stat-card orange"><div class="stat-label">Sisa Hutang</div><div class="stat-value" id="totSisa">Rp 0</div></div>
+            <div class="stat-card profit"><div class="stat-label">Keuntungan (Bunga)</div><div class="stat-value" id="untung">Rp 0</div></div>
+            <div class="stat-card"><div class="stat-label">Modal Total</div><div class="stat-value" id="modalTotal">Rp 0</div></div>
+            <div class="stat-card cash"><div class="stat-label">Dana Tersedia</div><div class="stat-value" id="danaTersedia">Rp 0</div></div>
+          </div>
+          <button class="btn btn-warning" onclick="openResetModal()">Reset Keuntungan</button>
+          <button class="btn btn-danger" onclick="resetAllData()">Reset Semua Data</button>
+          <button class="btn btn-success" onclick="expExcel()">Export Excel</button>
+        </div>
+      </details>
+      <details open>
+        <summary>Detail Pinjaman</summary>
+        <div class="card"><table><thead><tr><th>Anggota</th><th>Pokok</th><th>Total</th><th>Terbayar</th><th>Sisa</th><th>Cicilan</th><th>Status</th></tr></thead><tbody id="repList"></tbody></table></div>
+      </details>
     </div>
   </div>
 
-  <!-- MODAL -->
+  <!-- MODAL RESET KEUNTUNGAN -->
+  <div id="resetModal" class="modal" onclick="if(event.target===this)closeResetModal()">
+    <div class="modal-content">
+      <div class="modal-header">Reset Keuntungan</div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Kategori</label>
+          <select id="resetKategori">
+            <option value="Transfer">Transfer</option>
+            <option value="Pengeluaran">Pengeluaran</option>
+            <option value="Lain-lain">Lain-lain</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Keterangan</label>
+          <input type="text" id="resetKeterangan" placeholder="Contoh: Transfer ke rekening X">
+        </div>
+      </div>
+      <div style="text-align:right">
+        <button class="btn" onclick="closeResetModal()">Batal</button>
+        <button class="btn btn-danger" onclick="confirmReset()">Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL UTAMA -->
   <div id="modal" class="modal" onclick="if(event.target===this)closeMod()">
     <div class="modal-content">
       <div class="modal-header" id="modTit"></div>
@@ -74,7 +173,7 @@
     let profitHistory = [];
     let modalAwal = 0;
     let modalTambah = 0;
-    let editedMembers = new Set(); // untuk save all
+    let editedMembers = new Set();
 
     const uid=()=>Date.now()+''+Math.random().toString(36).substr(2,9),
     round=n=>Math.round((n+Number.EPSILON)*100)/100,
@@ -84,18 +183,92 @@
     loansOf=mid=>loans.filter(l=>l.memberId===mid),
     actLoans=mid=>loansOf(mid).filter(l=>l.status!=='Lunas');
 
-    function showMod(t,m){document.getElementById('modTit').textContent=t;document.getElementById('modBod').innerHTML=m;document.getElementById('modal').classList.add('active')}
-    function closeMod(){document.getElementById('modal').classList.remove('active')}
+    function showMod(t,m){
+      document.getElementById('modTit').textContent=t;
+      document.getElementById('modBod').textContent=m;
+      document.getElementById('modal').classList.add('active');
+    }
+    function closeMod(){document.getElementById('modal').classList.remove('active');}
 
-    // === EDIT ANGGOTA ===
+    function switchPage(btn, p){
+      document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(x=>x.classList.remove('active'));
+      document.getElementById('page-'+p).classList.add('active');
+      btn.classList.add('active');
+      if(p==='anggota') refreshMember();
+      if(p==='pinjaman') updDrop('loanMember');
+      if(p==='pembayaran') { updDrop('payMember'); resetPaymentForm(); }
+      if(p==='laporan') updRep();
+    }
+
+    function saveData(){
+      localStorage.setItem('usipa_members', JSON.stringify(members));
+      localStorage.setItem('usipa_loans', JSON.stringify(loans));
+      localStorage.setItem('usipa_payments', JSON.stringify(payments));
+      localStorage.setItem('usipa_profitHistory', JSON.stringify(profitHistory));
+      localStorage.setItem('usipa_nextId', nextMemberId);
+      localStorage.setItem('usipa_modalAwal', modalAwal);
+      localStorage.setItem('usipa_modalTambah', modalTambah);
+    }
+    function loadData(){
+      const m = localStorage.getItem('usipa_members');
+      const l = localStorage.getItem('usipa_loans');
+      const p = localStorage.getItem('usipa_payments');
+      const ph = localStorage.getItem('usipa_profitHistory');
+      const nid = localStorage.getItem('usipa_nextId');
+      const ma = localStorage.getItem('usipa_modalAwal');
+      const mt = localStorage.getItem('usipa_modalTambah');
+      if(m) {
+        members = JSON.parse(m);
+        const ids = members.map(x => parseInt(x.id.replace(/\D/g, '')) || 0);
+        nextMemberId = ids.length > 0 ? Math.max(...ids) + 1 : 1;
+      }
+      if(nid && parseInt(nid) > nextMemberId) nextMemberId = parseInt(nid);
+      if(l) loans = JSON.parse(l);
+      if(p) payments = JSON.parse(p);
+      if(ph) profitHistory = JSON.parse(ph);
+      if(ma) modalAwal = Number(ma);
+      if(mt) modalTambah = Number(mt);
+    }
+
+    function addMember(){
+      let rawId = document.getElementById('idAnggota').value.trim();
+      const nama = document.getElementById('nama').value.trim();
+      if(!nama) return showMod('Error','Nama wajib diisi!');
+      let finalId;
+      if(rawId){
+        if(members.some(m=>m.id===rawId)) return showMod('Error','ID sudah digunakan!');
+        finalId = rawId;
+        const num = parseInt(rawId.replace(/\D/g, '')) || 0;
+        if(num >= nextMemberId) nextMemberId = num + 1;
+      } else {
+        finalId = String(nextMemberId).padStart(3, '0');
+        nextMemberId++;
+      }
+      const t = document.getElementById('tglDaftar').value || new Date().toISOString().split('T')[0];
+      members.push({id:finalId, nama, tglDaftar:fmtDt(t)});
+      document.getElementById('idAnggota').value=''; document.getElementById('nama').value=''; document.getElementById('tglDaftar').value='';
+      saveData(); refreshMember();
+      showMod('Berhasil',`Anggota ${nama} (ID: ${finalId}) ditambahkan!`);
+    }
+
+    function delMember(id){
+      if(loansOf(id).length) return showMod('Gagal', 'Anggota punya pinjaman aktif!');
+      if(!confirm('Hapus anggota ini?')) return;
+      members = members.filter(x => x.id !== id);
+      saveData(); refreshMember(); showMod('Berhasil','Anggota dihapus');
+    }
+
     function editMember(id, field, input) {
       const value = input.value.trim();
       const member = members.find(m => m.id === id);
       if (!member) return;
-
-      if (field === 'tglDaftar') member[field] = fmtDt(value);
-      else member[field] = value;
-
+      if (field === 'tglDaftar') {
+        const date = new Date(value);
+        member[field] = isNaN(date) ? fmtDt() : fmtDt(date);
+      } else {
+        member[field] = value;
+      }
       editedMembers.add(id);
       document.getElementById('saveAllBtn').style.display = 'inline-block';
       saveData();
@@ -108,119 +281,421 @@
       showMod('Sukses', 'Semua perubahan disimpan!');
     }
 
+    function refreshMember(){rendMem()}
     function rendMem(){
       const d=document.getElementById('memberList');
       if(!members.length){d.innerHTML='<tr><td colspan="6" style="text-align:center">Belum ada anggota</td></tr>';return}
       d.innerHTML=members.map(m=>{
         const ml=loansOf(m.id),sh=ml.reduce((s,l)=>s+Math.max(0,l.total-l.paidAmount),0);
+        const isoDate = m.tglDaftar.split('/').reverse().join('-');
         return`<tr>
           <td class="id-cell"><strong>${m.id}</strong></td>
           <td><input type="text" class="edit-input" value="${m.nama}" onchange="editMember('${m.id}', 'nama', this)"></td>
-          <td><input type="date" class="edit-input" value="${m.tglDaftar.split('/').reverse().join('-')}" onchange="editMember('${m.id}', 'tglDaftar', this)"></td>
+          <td><input type="date" class="edit-input" value="${isoDate}" onchange="editMember('${m.id}', 'tglDaftar', this)"></td>
           <td style="text-align:center">${ml.length}</td>
           <td><strong>${fmtRp(sh)}</strong></td>
           <td><button class="btn btn-danger btn-sm" onclick="delMember('${m.id}')">Hapus</button></td>
         </tr>`}).join('');
     }
 
-    // === IMPORT EXCEL ===
+    function updDrop(sid){
+      const opts = members.map(m=>`<option value="${m.id}">${m.id} - ${m.nama}</option>`).join('');
+      document.getElementById(sid).innerHTML='<option value="">— Pilih Anggota —</option>'+opts;
+    }
+
+    function calcLoan(p,t,b=0.01){
+      const pk=Number(p),tn=parseInt(t,10);
+      if(isNaN(pk)||isNaN(tn)||tn<=0||pk<=0) return null;
+      const tb=pk*b*tn,tot=pk+tb,ang=tot/tn;
+      return{total:tot,angsuran:ang,bungaPerBulan:b};
+    }
+
+    function updateSim(){
+      const p=document.getElementById('pokok').value,t=document.getElementById('tenor').value,r=document.getElementById('simResult');
+      if(!p||!t){r.innerHTML='Isi data untuk simulasi';return}
+      const c=calcLoan(p,t);
+      if(!c){r.innerHTML='Input tidak valid';return}
+      r.innerHTML=`<div><strong>Total:</strong> ${fmtRp(round(c.total))}</div>
+        <div><strong>Cicilan/bln:</strong> ${fmtRp(round(c.angsuran))}</div>
+        <div><strong>Bunga:</strong> ${fmtRp(round(c.total-Number(p)))}</div>`;
+    }
+
+    function addLoan(){
+      if(modalAwal === 0) return showMod('Error','Modal Awal belum disimpan! Simpan dulu di tab Laporan.');
+      const mid=document.getElementById('loanMember').value;
+      const pk=Number(document.getElementById('pokok').value);
+      const tn=parseInt(document.getElementById('tenor').value,10);
+      if(!mid) return showMod('Error','Pilih anggota!');
+      if(isNaN(pk)||pk<=0) return showMod('Error','Jumlah tidak valid!');
+      if(isNaN(tn)||tn<=0) return showMod('Error','Tenor tidak valid!');
+      const c=calcLoan(pk,tn);
+      if(!c) return showMod('Error','Gagal hitung!');
+      const wajib = document.getElementById('wajibCicilan').checked;
+      loans.push({
+        id:uid(),memberId:mid,pokok:pk,tenor:tn,bungaPerBulan:c.bungaPerBulan,
+        total:round(c.total),angsuran:round(c.angsuran),paidAmount:0,status:'Belum lunas',
+        createdAt:new Date().toLocaleDateString('id-ID'), wajibCicilan: wajib
+      });
+      document.getElementById('pokok').value=''; document.getElementById('tenor').value='';
+      document.getElementById('simResult').innerHTML='Isi data untuk simulasi';
+      saveData(); rendLoan(); refreshMember(); updRep(); showMod('Sukses','Pinjaman ditambahkan!');
+    }
+
+    function rendLoan(){
+      const tb=document.getElementById('loanList');
+      if(!loans.length){tb.innerHTML='<tr><td colspan="7" style="text-align:center">Belum ada pinjaman</td></tr>';return}
+      tb.innerHTML=loans.map(l=>{
+        const sh=round(l.total-l.paidAmount),sc=l.status==='Lunas'?'status-lunas':'status-belum';
+        return`<tr>
+          <td>${nameOf(l.memberId)}</td>
+          <td>${fmtRp(l.pokok)}</td>
+          <td>${fmtRp(l.total)}</td>
+          <td>${fmtRp(l.paidAmount)}</td>
+          <td><strong>${fmtRp(sh)}</strong></td>
+          <td><span class="status-badge ${sc}">${l.status}</span></td>
+          <td><button class="btn btn-info btn-sm" onclick="showPayHistory('${l.id}')">Riwayat</button></td>
+        </tr>`}).join('');
+    }
+
+    function showPayHistory(loanId){
+      const hist = payments.filter(p => p.loanId === loanId).reverse();
+      if(!hist.length) return showMod('Info', 'Belum ada pembayaran.');
+      let txt = 'Riwayat Pembayaran:\n\n';
+      hist.forEach(p => txt += `${p.date} → ${fmtRp(p.amount)}\n`);
+      showMod('Riwayat', txt);
+    }
+
+    function resetPaymentForm(){
+      currentPayMemberId = null;
+      ['selectedMemberInfo','loanSel','loanDetailInfo','sisaInfo'].forEach(id=>document.getElementById(id).style.display='none');
+      document.getElementById('nomBayar').value = '';
+      document.getElementById('actLoans').innerHTML = '';
+    }
+
+    function loadLoans(){
+      const mid = document.getElementById('payMember').value;
+      resetPaymentForm();
+      if(!mid) return;
+
+      currentPayMemberId = mid;
+      const m = members.find(x=>x.id===mid);
+      if(!m) return;
+
+      document.getElementById('selectedMemberInfo').innerHTML = `<div class="selected-member">Anggota: <strong>${mid} - ${m.nama}</strong></div>`;
+      document.getElementById('selectedMemberInfo').style.display = 'block';
+
+      const ac = actLoans(mid);
+      const al = document.getElementById('actLoans');
+      if(!ac.length){
+        al.innerHTML = `<div class="error-box">Tidak ada pinjaman aktif</div>`;
+        document.getElementById('loanSel').style.display = 'block';
+        return;
+      }
+
+      al.innerHTML = ac.map(l => {
+        const sh = round(l.total - l.paidAmount);
+        const selected = selLoan === l.id ? 'selected' : '';
+        return `<div class="loan-item ${selected}" onclick="selLn('${l.id}')">
+          <div><strong>#${l.id.substr(-6)}</strong> ${l.wajibCicilan ? '(Wajib Cicilan)' : ''}</div>
+          <div class="small-text">Sisa: ${fmtRp(sh)} | Cicilan: ${fmtRp(l.angsuran)}</div>
+        </div>`;
+      }).join('');
+
+      document.getElementById('loanSel').style.display = 'block';
+
+      if(selLoan){
+        const ln = loans.find(l => l.id === selLoan);
+        if(ln && ln.memberId === mid){
+          const sh = round(ln.total - ln.paidAmount);
+          document.getElementById('loanDetailInfo').innerHTML = `<div class="info-box">
+            <strong>Sisa Hutang:</strong> ${fmtRp(sh)}<br>
+            <strong>Cicilan Normal:</strong> ${fmtRp(ln.angsuran)}
+            ${ln.wajibCicilan ? '<br><strong style="color:red">WAJIB BAYAR CICILAN PENUH!</strong>' : ''}
+          </div>`;
+          document.getElementById('loanDetailInfo').style.display = 'block';
+          document.getElementById('sisaInfo').innerHTML = `Maksimal bayar: ${fmtRp(sh)}`;
+          document.getElementById('sisaInfo').style.display = 'block';
+        }
+      }
+    }
+
+    function selLn(lid){
+      selLoan = lid;
+      loadLoans();
+    }
+
+    function makePay(){
+      if(!currentPayMemberId) return showMod('Error','Pilih anggota!');
+      if(!selLoan) return showMod('Error','Pilih pinjaman!');
+
+      const by = Number(document.getElementById('nomBayar').value);
+      if(isNaN(by) || by <= 0) return showMod('Error','Nominal tidak valid!');
+
+      const ln = loans.find(l => l.id === selLoan);
+      if(!ln || ln.memberId !== currentPayMemberId) return showMod('Error','Pinjaman tidak valid!');
+
+      const sh = round(ln.total - ln.paidAmount);
+      if(by > sh) return showMod('Gagal',`Melebihi sisa: ${fmtRp(sh)}`);
+
+      if(ln.wajibCicilan && ln.paidAmount + by < ln.total && by !== ln.angsuran){
+        return showMod('Peringatan',`Harus bayar cicilan penuh: ${fmtRp(ln.angsuran)}`);
+      }
+
+      ln.paidAmount = round(ln.paidAmount + by);
+      if(ln.paidAmount >= ln.total) ln.status = 'Lunas';
+
+      payments.push({
+        id: uid(),
+        loanId: selLoan,
+        memberId: currentPayMemberId,
+        amount: by,
+        date: new Date().toLocaleDateString('id-ID')
+      });
+
+      saveData();
+      rendLoan();
+      rendPay();
+      refreshMember();
+      updRep();
+      resetPaymentForm();
+      document.getElementById('payMember').value = '';
+      showMod('Sukses', ln.status === 'Lunas' ? 'LUNAS!' : `Pembayaran ${fmtRp(by)} berhasil!`);
+    }
+
+    function rendPay(){
+      const tb=document.getElementById('payList');
+      if(!payments.length){tb.innerHTML='<tr><td colspan="3" style="text-align:center">Belum ada</td></tr>';return}
+      tb.innerHTML=payments.slice().reverse().slice(0,20).map(p=>`<tr><td>${p.date}</td><td>${nameOf(p.memberId)}</td><td>${fmtRp(p.amount)}</td></tr>`).join('');
+    }
+
+    function openResetModal(){
+      const currentProfit = getCurrentProfit();
+      if(currentProfit <= 0) return showMod('Info','Keuntungan saat ini Rp 0');
+      document.getElementById('resetModal').classList.add('active');
+    }
+
+    function closeResetModal(){
+      document.getElementById('resetModal').classList.remove('active');
+      document.getElementById('resetKeterangan').value = '';
+    }
+
+    function confirmReset(){
+      const kategori = document.getElementById('resetKategori').value;
+      const keterangan = document.getElementById('resetKeterangan').value.trim() || '-';
+      const jumlah = getCurrentProfit();
+
+      profitHistory.push({
+        date: new Date().toLocaleDateString('id-ID'),
+        kategori,
+        keterangan,
+        jumlah
+      });
+
+      saveData();
+      closeResetModal();
+      updRep();
+      showMod('Sukses',`Keuntungan Rp ${fmtRp(jumlah)} di-reset!\nKategori: ${kategori}\nKeterangan: ${keterangan}`);
+    }
+
+    function getCurrentProfit(){
+      const totalPokok = loans.reduce((s,l)=>s+l.pokok, 0);
+      const totalTerbayar = payments.reduce((s,p)=>s+p.amount, 0);
+      const totalReset = profitHistory.reduce((s,h)=>s+h.jumlah, 0);
+      return Math.max(0, round(totalTerbayar - totalPokok - totalReset));
+    }
+
+    function saveModalAwal(){
+      const ma = Number(document.getElementById('modalAwal').value);
+      if(isNaN(ma) || ma <= 0) return showMod('Error','Modal awal tidak valid!');
+      modalAwal = ma;
+      saveData();
+      updRep();
+      showMod('Sukses','Modal awal disimpan!');
+    }
+
+    function addModal(){
+      const mt = Number(document.getElementById('tambahModal').value);
+      if(isNaN(mt) || mt <= 0) return showMod('Error','Nominal tambah tidak valid!');
+      modalTambah += mt;
+      saveData();
+      updRep();
+      document.getElementById('tambahModal').value = '';
+      showMod('Sukses','Modal ditambahkan!');
+    }
+
+    function resetAllData(){
+      if(!confirm('Hapus semua data? Ini tidak bisa dikembalikan!')) return;
+      localStorage.clear();
+      members = [];
+      loans = [];
+      payments = [];
+      profitHistory = [];
+      nextMemberId = 1;
+      modalAwal = 0;
+      modalTambah = 0;
+      rendMem(); rendLoan(); rendPay(); updRep();
+      showMod('Sukses','Semua data direset!');
+    }
+
+    function updRep(){
+      const totalPinjam = loans.reduce((s,l)=>s+l.pokok, 0);
+      const totalTerbayar = payments.reduce((s,p)=>s+p.amount, 0);
+      const sisaHutang = loans.reduce((s,l)=>s+Math.max(0,l.total-l.paidAmount), 0);
+      const keuntungan = getCurrentProfit();
+      const modalTotal = modalAwal + modalTambah;
+      const danaTersedia = Math.max(0, modalTotal - totalPinjam + totalTerbayar - sisaHutang);
+
+      document.getElementById('totPinjam').textContent = fmtRp(round(totalPinjam));
+      document.getElementById('totPaid').textContent = fmtRp(round(totalTerbayar));
+      document.getElementById('totSisa').textContent = fmtRp(round(sisaHutang));
+      document.getElementById('untung').textContent = fmtRp(keuntungan);
+      document.getElementById('modalTotal').textContent = fmtRp(modalTotal);
+      document.getElementById('danaTersedia').textContent = fmtRp(round(danaTersedia));
+
+      const tb=document.getElementById('repList');
+      if(!loans.length){tb.innerHTML='<tr><td colspan="7" style="text-align:center">Kosong</td></tr>';return}
+      tb.innerHTML=loans.map(l=>{
+        const sh=round(l.total-l.paidAmount),sc=l.status==='Lunas'?'status-lunas':'status-belum';
+        return`<tr><td>${nameOf(l.memberId)}</td><td>${fmtRp(l.pokok)}</td><td>${fmtRp(l.total)}</td><td>${fmtRp(l.paidAmount)}</td><td><strong>${fmtRp(sh)}</strong></td><td>${fmtRp(l.angsuran)}</td><td><span class="status-badge ${sc}">${l.status}</span></td></tr>`}).join('');
+    }
+
+    function expExcel(){
+      if(!members.length && !loans.length && !payments.length) return showMod('Peringatan','Tidak ada data!');
+      const wb = XLSX.utils.book_new();
+
+      const totalPinjam = loans.reduce((s,l)=>s+l.pokok, 0);
+      const totalTerbayar = payments.reduce((s,p)=>s+p.amount, 0);
+      const sisaHutang = loans.reduce((s,l)=>s+Math.max(0,l.total-l.paidAmount), 0);
+      const keuntungan = getCurrentProfit();
+      const modalTotal = modalAwal + modalTambah;
+      const danaTersedia = Math.max(0, modalTotal - totalPinjam + totalTerbayar - sisaHutang);
+
+      XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(members.map(m=>({ID:m.id,Nama:m.nama,'Tgl Daftar':m.tglDaftar}))), 'Anggota');
+      XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(loans.map(l=>({
+        Anggota:nameOf(l.memberId),Tanggal:l.createdAt,Pokok:l.pokok,Tenor:l.tenor+' bln',
+        Total:l.total,Terbayar:l.paidAmount,'Sisa':round(l.total-l.paidAmount),
+        Cicilan:l.angsuran,Status:l.status
+      }))), 'Pinjaman');
+      XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(payments.map(p=>({Tanggal:p.date,Anggota:nameOf(p.memberId),Nominal:p.amount}))), 'Pembayaran');
+      XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet([
+        {Keterangan:'Modal Awal',Nilai:modalAwal},
+        {Keterangan:'Modal Tambahan',Nilai:modalTambah},
+        {Keterangan:'Modal Total',Nilai:modalTotal},
+        {Keterangan:'Total Pokok Pinjaman',Nilai:totalPinjam},
+        {Keterangan:'Total Terbayar',Nilai:totalTerbayar},
+        {Keterangan:'Sisa Hutang (Pokok + Bunga)',Nilai:sisaHutang},
+        {Keterangan:'Keuntungan (Bunga)',Nilai:keuntungan},
+        {Keterangan:'DANA TERSEDIA',Nilai:danaTersedia}
+      ].concat(profitHistory.map(h=>({
+        Keterangan:`RESET: ${h.kategori} - ${h.keterangan}`,
+        Nilai: -h.jumlah
+      })))), 'Ringkasan');
+
+      XLSX.writeFile(wb, 'Usipa_Koperasi_' + new Date().toISOString().split('T')[0] + '.xlsx');
+      showMod('Export Sukses', '5 sheet: Anggota, Pinjaman, Pembayaran, Ringkasan + Dana Tersedia');
+    }
+
     function importExcel() {
       const file = document.getElementById('importFile').files[0];
       if (!file) return showMod('Error', 'Pilih file Excel dulu!');
 
       const reader = new FileReader();
       reader.onload = function(e) {
-        const data = new Uint8Array(e.target.result);
-        const workbook = XLSX.read(data, {type: 'array'});
-        let imported = 0;
+        try {
+          const data = new Uint8Array(e.target.result);
+          const workbook = XLSX.read(data, {type: 'array'});
+          let imported = 0;
 
-        // Anggota
-        if (workbook.SheetNames.includes('Anggota')) {
-          const sheet = XLSX.utils.sheet_to_json(workbook.Sheets['Anggota']);
-          members = sheet.map(row => ({
-            id: String(row.ID || row.id),
-            nama: row.Nama || row.nama,
-            tglDaftar: row['Tgl Daftar'] || row.tglDaftar
-          }));
-          const ids = members.map(x => parseInt(x.id.replace(/\D/g, '')) || 0);
-          nextMemberId = ids.length > 0 ? Math.max(...ids) + 1 : 1;
-          imported++;
+          // Reset dulu
+          members = []; loans = []; payments = []; profitHistory = []; modalAwal = 0; modalTambah = 0;
+
+          // Anggota
+          if (workbook.SheetNames.includes('Anggota')) {
+            const sheet = XLSX.utils.sheet_to_json(workbook.Sheets['Anggota']);
+            members = sheet.map(row => ({
+              id: String(row.ID || row.id || '').trim(),
+              nama: String(row.Nama || row.nama || '').trim(),
+              tglDaftar: String(row['Tgl Daftar'] || row.tglDaftar || '').trim()
+            })).filter(m => m.id && m.nama);
+            const ids = members.map(x => parseInt(x.id.replace(/\D/g, '')) || 0).filter(n => n > 0);
+            nextMemberId = ids.length > 0 ? Math.max(...ids) + 1 : 1;
+            imported++;
+          }
+
+          // Pinjaman
+          if (workbook.SheetNames.includes('Pinjaman') && members.length) {
+            const sheet = XLSX.utils.sheet_to_json(workbook.Sheets['Pinjaman']);
+            loans = sheet.map(row => {
+              const anggotaNama = String(row.Anggota || '').trim();
+              const member = members.find(m => m.nama === anggotaNama);
+              if (!member) return null;
+              return {
+                id: uid(),
+                memberId: member.id,
+                pokok: Number(row.Pokok) || 0,
+                tenor: Number(row.Tenor?.toString().replace(/[^\d]/g, '')) || 0,
+                total: Number(row.Total) || 0,
+                angsuran: Number(row.Cicilan) || 0,
+                paidAmount: Number(row.Terbayar) || 0,
+                status: (row.Status || '').includes('Lunas') ? 'Lunas' : 'Belum lunas',
+                createdAt: String(row.Tanggal || '').trim(),
+                wajibCicilan: !!row.Cicilan
+              };
+            }).filter(Boolean);
+            imported++;
+          }
+
+          // Pembayaran
+          if (workbook.SheetNames.includes('Pembayaran')) {
+            const sheet = XLSX.utils.sheet_to_json(workbook.Sheets['Pembayaran']);
+            payments = sheet.map(row => {
+              const anggotaNama = String(row.Anggota || '').trim();
+              const member = members.find(m => m.nama === anggotaNama);
+              if (!member) return null;
+              const loan = loans.find(l => l.memberId === member.id);
+              return {
+                id: uid(),
+                loanId: loan?.id || '',
+                memberId: member.id,
+                amount: Number(row.Nominal) || 0,
+                date: String(row.Tanggal || '').trim()
+              };
+            }).filter(Boolean);
+            imported++;
+          }
+
+          // Ringkasan
+          if (workbook.SheetNames.includes('Ringkasan')) {
+            const sheet = XLSX.utils.sheet_to_json(workbook.Sheets['Ringkasan']);
+            const ma = sheet.find(r => (r.Keterangan || '').includes('Modal Awal'));
+            const mt = sheet.find(r => (r.Keterangan || '').includes('Modal Tambahan'));
+            if (ma) modalAwal = Number(ma.Nilai) || 0;
+            if (mt) modalTambah = Number(mt.Nilai) || 0;
+            profitHistory = sheet.filter(r => (r.Keterangan || '').startsWith('RESET:')).map(r => {
+              const parts = (r.Keterangan || '').split(' - ');
+              return {
+                date: parts[0].replace('RESET: ', ''),
+                kategori: parts[1] || '',
+                keterangan: parts.slice(2).join(' - '),
+                jumlah: Math.abs(Number(r.Nilai) || 0)
+              };
+            });
+            imported++;
+          }
+
+          saveData();
+          refreshMember(); rendLoan(); rendPay(); updRep();
+          showMod('Import Sukses', `${imported} sheet berhasil diimport!`);
+        } catch (err) {
+          showMod('Error Import', 'File rusak atau format salah!');
         }
-
-        // Pinjaman
-        if (workbook.SheetNames.includes('Pinjaman')) {
-          const sheet = XLSX.utils.sheet_to_json(workbook.Sheets['Pinjaman']);
-          loans = sheet.map(row => {
-            const memberId = members.find(m => m.nama === row.Anggota)?.id;
-            if (!memberId) return null;
-            return {
-              id: uid(),
-              memberId,
-              pokok: Number(row.Pokok),
-              tenor: Number(row.Tenor.replace(' bln', '')),
-              total: Number(row.Total),
-              angsuran: Number(row.Cicilan),
-              paidAmount: Number(row.Terbayar),
-              status: row.Status === 'Lunas' ? 'Lunas' : 'Belum lunas',
-              createdAt: row.Tanggal,
-              wajibCicilan: row.Cicilan ? true : false
-            };
-          }).filter(Boolean);
-          imported++;
-        }
-
-        // Pembayaran
-        if (workbook.SheetNames.includes('Pembayaran')) {
-          const sheet = XLSX.utils.sheet_to_json(workbook.Sheets['Pembayaran']);
-          payments = sheet.map(row => {
-            const memberId = members.find(m => m.nama === row.Anggota)?.id;
-            const loan = loans.find(l => l.memberId === memberId && Math.abs(l.total - l.paidAmount - row.Nominal) < 1);
-            return {
-              id: uid(),
-              loanId: loan?.id || '',
-              memberId: memberId || '',
-              amount: Number(row.Nominal),
-              date: row.Tanggal
-            };
-          }).filter(p => p.memberId);
-          imported++;
-        }
-
-        // Ringkasan
-        if (workbook.SheetNames.includes('Ringkasan')) {
-          const sheet = XLSX.utils.sheet_to_json(workbook.Sheets['Ringkasan']);
-          const modalAwalRow = sheet.find(r => r.Keterangan === 'Modal Awal');
-          const modalTambahRow = sheet.find(r => r.Keterangan === 'Modal Tambahan');
-          if (modalAwalRow) modalAwal = Number(modalAwalRow.Nilai) || 0;
-          if (modalTambahRow) modalTambah = Number(modalTambahRow.Nilai) || 0;
-          profitHistory = sheet.filter(r => r.Keterangan.startsWith('RESET:')).map(r => ({
-            date: r.Keterangan.split(' - ')[0].replace('RESET: ', ''),
-            kategori: r.Keterangan.split(' - ')[1]?.split(' ')[0] || '',
-            keterangan: r.Keterangan.split(' - ').slice(1).join(' - '),
-            jumlah: Math.abs(Number(r.Nilai))
-          }));
-          imported++;
-        }
-
-        saveData();
-        refreshMember(); rendLoan(); rendPay(); updRep();
-        showMod('Import Sukses', `${imported} sheet berhasil diimport!`);
       };
       reader.readAsArrayBuffer(file);
     }
 
-    // === FUNGSI LAIN TETAP SAMA ===
-    function saveData(){ /* ... (sama seperti sebelumnya) */ }
-    function loadData(){ /* ... */ }
-    function addMember(){ /* ... */ }
-    function delMember(id){ /* ... */ }
-    function refreshMember(){rendMem()}
-    // ... (semua fungsi lain tetap sama)
-
     loadData();
     rendMem(); rendLoan(); rendPay(); updRep();
-    document.getElementById('modalAwal').value = modalAwal;
+    if (modalAwal > 0) document.getElementById('modalAwal').value = modalAwal;
   </script>
 </body>
 </html>
-
