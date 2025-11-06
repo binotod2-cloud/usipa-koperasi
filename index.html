@@ -83,7 +83,7 @@
     <!-- LAPORAN -->
     <div id="page-laporan" class="page">
       <details open>
-        <summary>_modal Awal</summary>
+        <summary>Modal Awal</summary>
         <div class="card">
           <div class="form-group"><label>Modal Awal (Rp)</label><input type="number" id="modalAwal" placeholder="Masukkan modal awal"></div>
           <button class="btn" onclick="saveModalAwal()">Simpan Modal Awal</button>
@@ -165,8 +165,8 @@
     fmtRp=n=>'Rp '+n.toLocaleString('id-ID'),
     fmtDt=d=>d?new Date(d).toLocaleDateString('id-ID'):new Date().toLocaleDateString('id-ID'),
     nameOf=id=>members.find(x=>x.id===id)?.nama||'-',
-    loavesOf=mid=>loans.filter(l=>l.memberId===mid),
-    actLoans=mid=>loavesOf(mid).filter(l=>l.status!=='Lunas');
+    loansOf=mid=>loans.filter(l=>l.memberId===mid),
+    actLoans=mid=>loansOf(mid).filter(l=>l.status!=='Lunas');
 
     function showMod(t,m){document.getElementById('modTit').textContent=t;document.getElementById('modBod').textContent=m;document.getElementById('modal').classList.add('active')}
     function closeMod(){document.getElementById('modal').classList.remove('active')}
@@ -182,7 +182,6 @@
       if(p==='laporan') updRep();
     }
 
-    // === DATA ===
     function saveData(){
       localStorage.setItem('usipa_members', JSON.stringify(members));
       localStorage.setItem('usipa_loans', JSON.stringify(loans));
@@ -213,12 +212,10 @@
       if(mt) modalTambah = Number(mt);
     }
 
-    // === ANGGOTA ===
     function addMember(){
       let rawId = document.getElementById('idAnggota').value.trim();
       const nama = document.getElementById('nama').value.trim();
       if(!nama) return showMod('Error','Nama wajib diisi!');
-
       let finalId;
       if(rawId){
         if(members.some(m=>m.id===rawId)) return showMod('Error','ID sudah digunakan!');
@@ -229,7 +226,6 @@
         finalId = String(nextMemberId).padStart(3, '0');
         nextMemberId++;
       }
-
       const t = document.getElementById('tglDaftar').value || new Date().toISOString().split('T')[0];
       members.push({id:finalId, nama, tglDaftar:fmtDt(t)});
       document.getElementById('idAnggota').value=''; document.getElementById('nama').value=''; document.getElementById('tglDaftar').value='';
@@ -238,7 +234,7 @@
     }
 
     function delMember(id){
-      if(loavesOf(id).length) return showMod('Gagal', 'Anggota punya pinjaman aktif!');
+      if(loansOf(id).length) return showMod('Gagal', 'Anggota punya pinjaman aktif!');
       if(!confirm('Hapus anggota ini?')) return;
       members = members.filter(x => x.id !== id);
       saveData(); refreshMember(); showMod('Berhasil','Anggota dihapus');
@@ -249,7 +245,7 @@
       const d=document.getElementById('memberList');
       if(!members.length){d.innerHTML='<tr><td colspan="6" style="text-align:center">Belum ada anggota</td></tr>';return}
       d.innerHTML=members.map(m=>{
-        const ml=loavesOf(m.id),sh=ml.reduce((s,l)=>s+Math.max(0,l.total-l.paidAmount),0);
+        const ml=loansOf(m.id),sh=ml.reduce((s,l)=>s+Math.max(0,l.total-l.paidAmount),0);
         return`<tr>
           <td class="id-cell"><strong>${m.id}</strong></td>
           <td>${m.nama}</td>
@@ -265,7 +261,6 @@
       document.getElementById(sid).innerHTML='<option value="">— Pilih Anggota —</option>'+opts;
     }
 
-    // === PINJAMAN ===
     function calcLoan(p,t,b=0.01){
       const pk=Number(p),tn=parseInt(t,10);
       if(isNaN(pk)||isNaN(tn)||tn<=0||pk<=0) return null;
@@ -328,7 +323,6 @@
       showMod('Riwayat', txt);
     }
 
-    // === PEMBAYARAN ===
     function resetPaymentForm(){
       currentPayMemberId = null;
       ['selectedMemberInfo','loanSel','loanDetailInfo','sisaInfo'].forEach(id=>document.getElementById(id).style.display='none');
@@ -429,10 +423,9 @@
     function rendPay(){
       const tb=document.getElementById('payList');
       if(!payments.length){tb.innerHTML='<tr><td colspan="3" style="text-align:center">Belum ada</td></tr>';return}
-      tb.innerHTML=payments.slice().reverse().slice(0,20).map(p=>`<tr><td>${p.date}</td><td>${nameOf(p.memberId)}</td><td>${fmtRp(p.amount)}</td></tr>`}).join('');
+      tb.innerHTML=payments.slice().reverse().slice(0,20).map(p=>`<tr><td>${p.date}</td><td>${nameOf(p.memberId)}</td><td>${fmtRp(p.amount)}</td></tr>`).join('');
     }
 
-    // === RESET KEUNTUNGAN ===
     function openResetModal(){
       const currentProfit = getCurrentProfit();
       if(currentProfit <= 0) return showMod('Info','Keuntungan saat ini Rp 0');
@@ -469,7 +462,6 @@
       return Math.max(0, round(totalTerbayar - totalPokok - totalReset));
     }
 
-    // === MODAL AWAL ===
     function saveModalAwal(){
       const ma = Number(document.getElementById('modalAwal').value);
       if(isNaN(ma) || ma <= 0) return showMod('Error','Modal awal tidak valid!');
@@ -479,7 +471,6 @@
       showMod('Sukses','Modal awal disimpan!');
     }
 
-    // === TAMBAH MODAL ===
     function addModal(){
       const mt = Number(document.getElementById('tambahModal').value);
       if(isNaN(mt) || mt <= 0) return showMod('Error','Nominal tambah tidak valid!');
@@ -490,7 +481,6 @@
       showMod('Sukses','Modal ditambahkan!');
     }
 
-    // === RESET SEMUA DATA ===
     function resetAllData(){
       if(!confirm('Hapus semua data? Ini tidak bisa dikembalikan!')) return;
       localStorage.clear();
@@ -505,14 +495,13 @@
       showMod('Sukses','Semua data direset!');
     }
 
-    // === LAPORAN ===
     function updRep(){
       const totalPinjam = loans.reduce((s,l)=>s+l.pokok, 0);
       const totalTerbayar = payments.reduce((s,p)=>s+p.amount, 0);
       const sisaHutang = loans.reduce((s,l)=>s+Math.max(0,l.total-l.paidAmount), 0);
       const keuntungan = getCurrentProfit();
       const modalTotal = modalAwal + modalTambah;
-      const danaTersedia = modalTotal - totalPinjam + payments.reduce((s,p)=>s+p.amount, 0) - sisaHutang;
+      const danaTersedia = Math.max(0, modalTotal - totalPinjam + totalTerbayar - sisaHutang);
 
       document.getElementById('totPinjam').textContent = fmtRp(round(totalPinjam));
       document.getElementById('totPaid').textContent = fmtRp(round(totalTerbayar));
@@ -528,9 +517,8 @@
         return`<tr><td>${nameOf(l.memberId)}</td><td>${fmtRp(l.pokok)}</td><td>${fmtRp(l.total)}</td><td>${fmtRp(l.paidAmount)}</td><td><strong>${fmtRp(sh)}</strong></td><td>${fmtRp(l.angsuran)}</td><td><span class="status-badge ${sc}">${l.status}</span></td></tr>`}).join('');
     }
 
-    // === EXPORT EXCEL LENGKAP ===
     function expExcel(){
-      if(!members.length && !loans.length) return showMod('Peringatan','Tidak ada data!');
+      if(!members.length && !loans.length && !payments.length) return showMod('Peringatan','Tidak ada data!');
       const wb = XLSX.utils.book_new();
 
       const totalPinjam = loans.reduce((s,l)=>s+l.pokok, 0);
@@ -538,7 +526,7 @@
       const sisaHutang = loans.reduce((s,l)=>s+Math.max(0,l.total-l.paidAmount), 0);
       const keuntungan = getCurrentProfit();
       const modalTotal = modalAwal + modalTambah;
-      const danaTersedia = modalTotal - totalPinjam + totalTerbayar - sisaHutang;
+      const danaTersedia = Math.max(0, modalTotal - totalPinjam + totalTerbayar - sisaHutang);
 
       XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(members.map(m=>({ID:m.id,Nama:m.nama,'Tgl Daftar':m.tglDaftar}))), 'Anggota');
       XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(loans.map(l=>({
@@ -565,7 +553,6 @@
       showMod('Export Sukses', '5 sheet: Anggota, Pinjaman, Pembayaran, Ringkasan + Dana Tersedia');
     }
 
-    // INIT
     loadData();
     rendMem(); rendLoan(); rendPay(); updRep();
     document.getElementById('modalAwal').value = modalAwal;
