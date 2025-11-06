@@ -494,7 +494,7 @@
       saveData();
       closeResetModal();
       updRep();
-      showMod('Sukses',`Keuntungan Rp ${fmtRp(jumlah)} di-reset!\nKategori: ${kategori}\nKeterangan: ${keterangan}`);
+      showMod('Sukses',`Keuntungan Rp ${fmtRp(jumlah)} di-reset!\nDana Tersedia berkurang otomatis.\nKategori: ${kategori}\nKeterangan: ${keterangan}`);
     }
 
     function getCurrentProfit(){
@@ -543,7 +543,8 @@
       const sisaHutang = loans.reduce((s,l)=>s+Math.max(0,l.total-l.paidAmount), 0);
       const keuntungan = getCurrentProfit();
       const modalTotal = modalAwal + modalTambah;
-      const danaTersedia = Math.max(0, modalTotal - totalPinjam + totalTerbayar - sisaHutang);
+      const totalReset = profitHistory.reduce((s,h)=>s+h.jumlah, 0);
+      const danaTersedia = Math.max(0, modalTotal - totalPinjam + totalTerbayar - sisaHutang - totalReset);
 
       document.getElementById('totPinjam').textContent = fmtRp(round(totalPinjam));
       document.getElementById('totPaid').textContent = fmtRp(round(totalTerbayar));
@@ -568,7 +569,8 @@
       const sisaHutang = loans.reduce((s,l)=>s+Math.max(0,l.total-l.paidAmount), 0);
       const keuntungan = getCurrentProfit();
       const modalTotal = modalAwal + modalTambah;
-      const danaTersedia = Math.max(0, modalTotal - totalPinjam + totalTerbayar - sisaHutang);
+      const totalReset = profitHistory.reduce((s,h)=>s+h.jumlah, 0);
+      const danaTersedia = Math.max(0, modalTotal - totalPinjam + totalTerbayar - sisaHutang - totalReset);
 
       XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(members.map(m=>({ID:m.id,Nama:m.nama,'Tgl Daftar':m.tglDaftar}))), 'Anggota');
       XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(loans.map(l=>({
@@ -585,6 +587,7 @@
         {Keterangan:'Total Terbayar',Nilai:totalTerbayar},
         {Keterangan:'Sisa Hutang (Pokok + Bunga)',Nilai:sisaHutang},
         {Keterangan:'Keuntungan (Bunga)',Nilai:keuntungan},
+        {Keterangan:'Total Reset Keuntungan',Nilai:totalReset},
         {Keterangan:'DANA TERSEDIA',Nilai:danaTersedia}
       ].concat(profitHistory.map(h=>({
         Keterangan:`RESET: ${h.kategori} - ${h.keterangan}`,
@@ -592,7 +595,7 @@
       })))), 'Ringkasan');
 
       XLSX.writeFile(wb, 'Usipa_Koperasi_' + new Date().toISOString().split('T')[0] + '.xlsx');
-      showMod('Export Sukses', '5 sheet: Anggota, Pinjaman, Pembayaran, Ringkasan + Dana Tersedia');
+      showMod('Export Sukses', '5 sheet: Anggota, Pinjaman, Pembayaran, Ringkasan + Reset');
     }
 
     function importExcel() {
